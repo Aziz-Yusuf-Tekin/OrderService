@@ -26,7 +26,7 @@ namespace OrderService.Api.Controllers.Customer
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetAllCustomer(GettAllCustomerQueryRequest getAllCustomerQueryRequest)
+        public async Task<IActionResult> GetAllCustomer([FromQuery] GettAllCustomerQueryRequest getAllCustomerQueryRequest)
         {
             GettAllCustomerQueryResponse response = await _mediator.Send(getAllCustomerQueryRequest);
             return Ok(response);

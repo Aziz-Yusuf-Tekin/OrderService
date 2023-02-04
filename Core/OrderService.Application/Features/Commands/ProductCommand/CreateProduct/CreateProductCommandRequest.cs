@@ -9,7 +9,7 @@ namespace OrderService.Application.Features.Commands.ProductCommand.CreateProduc
 {
     public class CreateProductCommandRequest :IRequest<CreateProductCommandResponse>
     {
-        public Guid CompanyId { get; set; }
+        public Guid CustomerId { get; set; }
         public string Name { get; set; }
         public int Stock { get; set; }
         public float Price { get; set; }

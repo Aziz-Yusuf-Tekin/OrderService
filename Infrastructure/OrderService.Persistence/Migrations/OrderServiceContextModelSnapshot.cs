@@ -32,11 +32,11 @@ namespace OrderService.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<TimeSpan>("OrderEndTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("OrderEndTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<TimeSpan>("OrderStartTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("OrderStartTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -64,14 +64,8 @@ namespace OrderService.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("ApprovalStatus")
-                        .HasColumnType("bit");
-
                     b.Property<Guid>("CustomerId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<TimeSpan>("OrderTime")
-                        .HasColumnType("time");
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");

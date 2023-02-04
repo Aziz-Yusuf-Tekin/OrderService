@@ -11,6 +11,6 @@ namespace OrderService.Application.Features.Queries.OrderQuery.GetByIdOrder
         public Guid ProductId { get; set; }
         public Guid CustomerId { get; set; }
         public bool ApprovalStatus { get; set; }
-        public TimeSpan OrderTime { get; set; }
+        public DateTime OrderTime { get; set; }
     }
 }

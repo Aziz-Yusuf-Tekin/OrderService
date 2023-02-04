@@ -8,9 +8,15 @@ namespace OrderService.Domain.Entities
 {
     public class Company : BaseEntity
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Company()
+        {
+            Product = new HashSet<Product>();
+        }
+
         public string Name { get; set; }
-        public TimeSpan OrderStartTime { get; set; }
-        public TimeSpan OrderEndTime { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public DateTime OrderStartTime { get; set; }
+        public DateTime OrderEndTime { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

@@ -1,4 +1,6 @@
+using MediatR;
 using Microsoft.OpenApi.Models;
+using OrderService.Application;
 using OrderService.Persistence;
 using System.Reflection;
 
@@ -12,6 +14,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddApplicationServices();
 
 builder.Services.AddSwaggerGen(options =>
 {

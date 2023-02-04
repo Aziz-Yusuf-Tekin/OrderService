@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Persistence", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Api", "Presentation\OrderService.Api\OrderService.Api.csproj", "{0E00EC66-2FBB-4CE1-A48B-2A35B1AF3177}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Web", "OrderService.Web\OrderService.Web.csproj", "{622730EE-97D5-4971-9C94-17EB6D40EFA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{0E00EC66-2FBB-4CE1-A48B-2A35B1AF3177}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E00EC66-2FBB-4CE1-A48B-2A35B1AF3177}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E00EC66-2FBB-4CE1-A48B-2A35B1AF3177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{622730EE-97D5-4971-9C94-17EB6D40EFA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{622730EE-97D5-4971-9C94-17EB6D40EFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{622730EE-97D5-4971-9C94-17EB6D40EFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{622730EE-97D5-4971-9C94-17EB6D40EFA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

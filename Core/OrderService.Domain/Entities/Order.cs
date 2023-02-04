@@ -14,8 +14,6 @@ namespace OrderService.Domain.Entities
 
         [ForeignKey("CustomerId")]
         public Guid CustomerId { get; set; }
-        public bool ApprovalStatus { get; set; }
-        public TimeSpan OrderTime { get; set; }
 
         public Product Product { get; set; }
         public Customer Customer { get; set; }

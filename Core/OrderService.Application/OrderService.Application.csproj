@@ -16,4 +16,8 @@
     <ProjectReference Include="..\..\Core\OrderService.Domain\OrderService.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO\Order\" />
+  </ItemGroup>
+
 </Project>

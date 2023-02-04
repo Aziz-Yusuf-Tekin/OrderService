@@ -25,8 +25,6 @@ namespace OrderService.Application.Features.Queries.OrderQuery.GetByIdOrder
             {
                 CustomerId = order.CustomerId,
                 ProductId = order.ProductId,
-                ApprovalStatus = order.ApprovalStatus,
-                OrderTime = order.OrderTime
             };
         }
     }

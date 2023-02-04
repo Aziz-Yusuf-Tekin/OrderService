@@ -6,6 +6,7 @@ using OrderService.Application.Features.Commands.CompanyCommand.DeleteCompany;
 using OrderService.Application.Features.Commands.CompanyCommand.UpdateCompany;
 using OrderService.Application.Features.Queries.CompanyQuery.GetAllCompany;
 using OrderService.Application.Features.Queries.CompanyQuery.GetByIdCompany;
+using OrderService.Application.Repositories.CompanyRepository;
 using System.Net;
 
 namespace OrderService.Api.Controllers.Company
@@ -15,10 +16,12 @@ namespace OrderService.Api.Controllers.Company
     public class CompaniesController : ControllerBase
     {
         readonly IMediator _mediator;
+        private ICompanyReadRepository _companyReadRepository;
 
-        public CompaniesController(IMediator mediator)
+        public CompaniesController(IMediator mediator, ICompanyReadRepository companyReadRepository)
         {
             _mediator = mediator;
+            _companyReadRepository = companyReadRepository;
         }
 
         /// <summary>
@@ -26,10 +29,11 @@ namespace OrderService.Api.Controllers.Company
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetAllProduct(GetAllCompanyQueryRequest getAllCompanyQueryRequest)
+        public async Task<IActionResult> GetAll()
         {
-            GetAllCompanyQueryResponse response = await _mediator.Send(getAllCompanyQueryRequest);
-            return Ok(response);
+            var res = _companyReadRepository.GetCompanyList();
+            //GetAllCompanyQueryResponse response = await _mediator.Send(getAllCompanyQueryRequest);
+            return Ok(res);
         }
 
         /// <summary>

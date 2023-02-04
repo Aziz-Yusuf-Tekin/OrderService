@@ -11,8 +11,5 @@ namespace OrderService.Application.Features.Commands.OrderCommand.CreateOrder
     {
         public Guid CustomerId { get; set; }
         public Guid ProductId { get; set; }
-        public bool ApprovalStatus { get; set; }
-        public TimeSpan OrderTime { get; set; }
-
     }
 }

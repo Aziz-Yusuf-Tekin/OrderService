@@ -26,7 +26,7 @@ namespace OrderService.Api.Controllers.Order
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult>GettAllOrder(GettAllOrderQueryRequest gettAllOrderQueryRequest)
+        public async Task<IActionResult>GettAllOrder([FromQuery] GettAllOrderQueryRequest gettAllOrderQueryRequest)
         {
             GettAllOrderQueryResponse response = await _mediator.Send(gettAllOrderQueryRequest);
             return Ok();

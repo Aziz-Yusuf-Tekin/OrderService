@@ -6,6 +6,7 @@ using OrderService.Application.Features.Commands.ProductCommand.DeleteProduct;
 using OrderService.Application.Features.Commands.ProductCommand.UpdateProduct;
 using OrderService.Application.Features.Queries.ProductQuery.GetByIdProduct;
 using OrderService.Application.Features.Queries.ProductQuery.GettAllProduct;
+using OrderService.Application.Repositories.ProductRepository;
 using System.Net;
 
 namespace OrderService.Api.Controllers.Product
@@ -15,21 +16,24 @@ namespace OrderService.Api.Controllers.Product
     public class ProductsController : ControllerBase
     {
         readonly IMediator _mediator;
+        private IProductReadRepository _productsReadRepository;
 
-        public ProductsController(IMediator mediator)
+        public ProductsController(IMediator mediator, IProductReadRepository productReadRepository)
         {
             _mediator = mediator;
+            _productsReadRepository = productReadRepository;
         }
 
         /// <summary>
-        /// Get All Product
+        /// Get All Product By Company
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetAllProduct(GetAllProductQueryRequest getAllProductQueryRequest)
+        public async Task<IActionResult> GetAllProductByCompany(Guid id)
         {
-            GetAllProductQueryResponse response = await _mediator.Send(getAllProductQueryRequest);
-            return Ok(response);
+            var res = _productsReadRepository.GetAllProductByCompany(id);
+            //GetAllProductQueryResponse response = await _mediator.Send(getAllProductQueryRequest);
+            return Ok(res);
         }
 
         /// <summary>

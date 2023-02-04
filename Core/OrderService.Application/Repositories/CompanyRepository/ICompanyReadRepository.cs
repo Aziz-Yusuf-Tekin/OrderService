@@ -10,5 +10,6 @@ namespace OrderService.Application.Repositories.CompanyRepository
 {
     public interface ICompanyReadRepository : IReadRepository<Company>
     {
+        public List<Company> GetCompanyList();
     }
 }

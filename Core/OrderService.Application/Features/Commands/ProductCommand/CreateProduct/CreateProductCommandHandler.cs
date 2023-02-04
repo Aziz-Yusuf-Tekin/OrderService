@@ -21,7 +21,7 @@ namespace OrderService.Application.Features.Commands.ProductCommand.CreateProduc
         {
             await _productWriteRepository.AddAsync(new()
             {
-                CompanyId = request.CompanyId,
+                CompanyId = request.CustomerId,
                 Name = request.Name,
                 Price = request.Price,
                 Stock = request.Stock,

@@ -10,5 +10,6 @@ namespace OrderService.Application.Repositories.ProductRepository
 {
     public interface IProductReadRepository : IReadRepository<Product>
     {
+        public List<Product> GetAllProductByCompany(Guid companyId);
     }
 }

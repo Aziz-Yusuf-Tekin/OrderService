@@ -25,8 +25,6 @@ namespace OrderService.Application.Features.Commands.OrderCommand.UpdateOrder
             Order order = await _orderReadRepository.GetByIdAsync(request.Id);
             order.ProductId = request.ProductId;
             order.CustomerId = request.CustomerId;
-            order.ApprovalStatus = request.ApprovalStatus;
-            order.OrderTime = request.OrderTime;
             await _orderWriteRepository.SaveAsync();
             return new();
         }

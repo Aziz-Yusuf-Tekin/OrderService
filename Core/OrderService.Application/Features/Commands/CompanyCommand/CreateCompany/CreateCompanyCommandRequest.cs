@@ -10,7 +10,7 @@ namespace OrderService.Application.Features.Commands.CompanyCommand.CreateCompan
     public class CreateCompanyCommandRequest : IRequest<CreateCompanyCommandResponse>
     {
         public string Name { get; set; }
-        public TimeSpan OrderStartTime { get; set; }
-        public TimeSpan OrderEndTime { get; set; }
+        public DateTime OrderStartTime { get; set; }
+        public DateTime OrderEndTime { get; set; }
     }
 }
